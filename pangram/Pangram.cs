@@ -1,7 +1,14 @@
+using System.Linq;
+
 public static class Pangram
 {
+    private const string Alphabet = "abcdefghijklmnopqrstuvwxyz";
     public static bool IsPangram(string input)
     {
-        throw new NotImplementedException("You need to implement this method.");
+        if (string.IsNullOrEmpty(input))
+        {
+            return false;
+        }
+        return Alphabet.All(c => input.ToLowerInvariant().Contains(c));
     }
 }
