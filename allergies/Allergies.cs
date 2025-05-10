@@ -12,17 +12,18 @@ public enum Allergen
 
 public class Allergies
 {
+    private readonly int _mask;
+
     public Allergies(int mask)
     {
+        _mask = mask;
     }
 
-    public bool IsAllergicTo(Allergen allergen)
-    {
-        throw new NotImplementedException("You need to implement this method.");
-    }
+    public bool IsAllergicTo(Allergen allergen) =>
+        (_mask & (1 << (int)allergen)) != 0;
 
-    public Allergen[] List()
-    {
-        throw new NotImplementedException("You need to implement this method.");
-    }
+    public Allergen[] List() =>
+        Enum.GetValues<Allergen>()
+            .Where(IsAllergicTo)
+            .ToArray();
 }
