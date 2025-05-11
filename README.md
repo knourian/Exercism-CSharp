@@ -1,7 +1,7 @@
-# Exercism-C#
+# C# Exercism Track
 
-Exercism C# Language
+Exercism C# Language Track
 
-Excersices And solution for Excersim C# Track
+ C# Excersices And solution
 
 https://exercism.org/tracks/csharp
